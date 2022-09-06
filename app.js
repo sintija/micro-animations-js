@@ -11,7 +11,7 @@ const notifications = document.querySelector('.notifications');
 const messages = document.querySelector('.messages');
 
 //set the certain object using the predefined gsap set function 
-//setting the tranfor origin to the centr (going to scale up from the middle of the svg)
+//setting the transform origin to the center (going to scale up from the middle of the svg)
 gsap.set('.feather', {
     scale: 0,
     transformOrigin: "center"
@@ -58,7 +58,6 @@ gsap.set('.wave', {
 opacity:0, transformOrigin: 'bottom'});
 
 
-
 //Notifications on click function 
 notifications.addEventListener('click', () => {
     //grabbing the body of the bell
@@ -86,10 +85,9 @@ notifications.addEventListener('click', () => {
 gsap.set('.flap', {transformOrigin: "top"})
 messages.addEventListener('click', () => {
  tl.fromTo('.messages-svg', {scale: 1}, {scale:0.9}); 
- //the flap to open up (scaling down to 0 and reversing the shape of svg )
+ //the flap to open up (scaling down to 0 and reversing the shape of svg)
  tl.fromTo('.flap', {scale:1}, {scale:-1}, "<50%");
  tl.fromTo('.messages-svg', {scale: 0.9}, {scale: 1}, "<50%"); 
  tl.fromTo('.note', {y:0, opacity: 1}, {y: -40, opacity: 0, duration: 0.75}); 
  tl.to('.flap', {scale:1}, "<50%")
-
 });
